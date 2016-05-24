@@ -1,0 +1,108 @@
+.userInput {
+	background-color: $second;
+	padding: 50px;
+	.wrapper {
+		// background-color: #ffffff;
+		padding: 50px;
+		border: 5px solid #ffffff;
+	}
+	p {
+		font-size: 1.9rem;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		line-height: 1.5;
+	}
+}
+
+.greeting h3 {
+	font-size: 4rem;
+}
+
+p.instructions {
+	margin-bottom: -10px;
+}
+
+.userInput p:nth-of-type(2) {
+	margin-top: 40px;
+}
+
+
+fieldset {
+	border: none;
+	text-align:center;
+}
+
+label {
+	display: inline-block;
+	background-color: rgba(255,255,255,0.8);
+	padding: 10px;
+	margin:  10px 5px;
+	border: 2px solid rgba(255,255,255,0.3);
+	border-radius: 3px;
+	text-transform: lowercase;
+	letter-spacing: 1px;
+	font-size: 1.8rem;
+	color: $second;
+}
+
+.simple {
+	padding: 0;
+	margin: 15px 0 10px;
+	display: inline-block;
+	background: none;
+	border: none;
+}
+
+input[type=text] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border-radius: 3px;
+	border: none;
+	font-family: $sans;
+
+}
+
+input[type=radio],
+input[type=checkbox] {
+	display: none;
+}
+
+input[type=radio]:checked + label,
+input[type=checkbox]:checked + label {
+	color: #000000;
+	border: 2px solid #000000;
+}
+
+input[type=submit] {
+	display: block;
+	padding: 10px;
+	margin: 20px auto;
+	font-family: $sans;
+	background-color: #ffffff;
+	border: 2px solid #000000;
+}
+
+fieldset {
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.commuteTimeResults {
+	margin: 30px;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	text-align: center;
+
+}
+
+.createPlaylist {
+	display: none;
+	transition: all 0.3s;
+}
+
+.createPlaylist.show {
+	display: block;
+}

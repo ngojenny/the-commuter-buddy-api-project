@@ -1,0 +1,337 @@
+@media (max-width: 1100px) {
+	/*GLOBAL STYLE CHANGES*/
+	.wrapper:not(.header-wrapper) {
+		width: 80%;
+	}
+}
+
+@media (max-width: 950px) {
+	/*HEADER STYLE CHANGES*/
+	header a {
+		margin-top: 70px;
+	}
+
+	header h1 {
+		font-size: 11rem;
+	}
+
+	header h2 {
+		font-size: 1.9rem;
+	}
+	.smallerHead {
+		font-size: 3.8rem;
+	}
+
+	.animateCarPath {
+		width: 19%;
+	}
+
+	.animateBusStop {
+		width: 22%;
+	}
+
+	/*CUSTOMIZED PLAYLIST STYLE CHANGES*/
+	.customizedPlaylist h3 {
+		margin: 160px 0 150px 40px; 
+		// font-size: 4.6rem;
+	}
+}
+
+@media (max-width: 770px) {
+	/*GLOBAL STYLE CHANGES*/
+	.wrapper:not(.header-wrapper) {
+		width: 85%;
+	}
+
+	/*HEADER STYLE CHANGES*/
+	header h1 {
+		font-size: 9rem;
+	}
+
+	header h2 {
+		font-size: 1.7rem;
+	}
+	.smallerHead {
+		font-size: 3.5rem;
+	}
+
+	.animateCarPath {
+		width: 21%;
+	}
+
+	.animateBusStop {
+		width: 24%;
+	}
+
+	/*USERINPUT STYLE CHANGES*/
+	.userInput .wrapper {
+		padding: 40px;
+	}
+	
+	
+	/*CUSTOMIZED PLAYLIST STYLE CHANGES*/
+	.spotifyWidget {
+		width: 50%;
+	}
+	.customizedPlaylist h3 {
+		width: calc(50% - 40px);
+		margin: 180px 0 150px 40px; 
+		font-size: 3.5rem;
+	}
+}
+
+@media (max-width: 580px) {
+	/*HEADER STYLE CHANGES*/
+	header .wrapper {
+		width: 70%;
+	}
+	header a {
+		margin-top: 110px;
+		font-size: 1.5rem;
+	}
+
+	header h1 {
+		margin-top: 80px;
+		font-size: 7.5rem;
+	}
+
+	header h2 {
+		font-size: 1.7rem;
+	}
+
+	.smallerHead {
+		font-size: 3.2rem;
+	}
+
+	.animateCarPath {
+		width: 22%;
+		bottom: 130px;
+	}
+
+	.animateBusStop {
+		width: 24%;
+		bottom: 130px;
+	}
+
+	/*FOOTER STYLES CHANGES*/
+	footer {
+		p {
+			font-size: 1.2rem;
+		}
+		.responsive {
+			display: block;
+			margin-top: -10px;
+		}
+	}
+
+	/*USERINPUT STYLE CHANGES*/
+	.userInput {
+		padding: 50px 0;
+		.wrapper {
+			padding: 30px;
+		}
+		p {
+			font-size: 1.6rem;
+		}
+
+	}
+
+	.greeting h3 {
+		font-size: 3.3rem;
+	}
+
+	label {
+		padding: 8px;
+		font-size: 1.6rem;
+		margin: 5px;
+	}
+	
+	input[type=text]:first-of-type {
+		margin-bottom: -15px;
+	}
+
+
+	/* CUSTOMIZED PLAYLIST STYLE CHANGES*/
+	.spotifyWidget {
+		width: 70%;
+		img {
+			margin-left: 10%;
+		}
+		iframe {
+			left: 18%;
+		}
+	}
+
+	.customizedPlaylist h3 {
+		width: 100%;
+		margin: 20px auto;
+		padding-bottom: 40px;
+	}
+
+	button {
+		position: absolute;
+		bottom: 0;
+		left: 35%;
+	}
+
+}
+
+@media (max-width: 450px) {
+	/*HEADER STYLE CHANGES*/
+	header h1 {
+		margin-top: 80px;
+		font-size: 6.5rem;
+		-webkit-text-stroke: 2px #000000;
+	}
+
+	header h2 {
+		font-size: 1.4rem;
+	}
+
+	header a {
+		font-size: 1.3rem;
+	}
+
+	.smallerHead {
+		font-size: 2.5rem;
+		-webkit-text-stroke: 1px #000000;
+	}
+
+	.smallerHeadLeft {
+		margin-bottom: -10px;
+	}
+	.smallerHeadRight {
+		margin-top: -10px;
+	}
+
+	.animateCarPath {
+		width: 26%;
+		left: -8%;
+	}
+
+	.animateBusStop {
+		width: 28%;
+	}
+
+	.notesAnimation {
+		display: none;
+	}
+	
+	/*USER INPUT STYLE CHANGES*/
+	.userInput p {
+		font-size: 1.4rem;
+	}
+
+	.greeting h3 {
+		font-size: 3rem;
+	}
+
+	input[type=text] {
+		font-size: 1.4rem;
+	}
+
+	label {
+		font-size: 1.4rem;
+		padding: 5px;
+	}
+
+	p.commuterTimeMin {
+		font-size: 1.5rem;
+		margin: 10px;
+	}
+	
+	.commuteTimeResults {
+		margin: 20px;
+	}
+
+
+	/*CUSTOMIZED PLAYLIST STYLE CHANGES*/
+	.customizedPlaylist {
+		padding: 25px 0;
+		iframe {
+			width: 100%;
+			position: static;
+			margin-left: -60px;
+		}
+	}
+
+	.spotifyWidget {
+		width: 100%;
+		img {
+			display: none;
+		}
+	}
+
+	button {
+		left: 29%;
+	}	
+
+}
+
+@media (max-width: 320px) {
+	/*HEADER STYLE CHANGES*/
+	header {
+		padding: 30px 0;
+	}
+
+	header h1 {
+		font-size: 5rem;
+	}
+
+	header h2 {
+		font-size: 1.3rem;
+	}
+
+	header a {
+		font-size: 1.2rem;
+	}
+
+	.smallerHead {
+		font-size: 2rem;
+	}
+
+	.smallerHeadLeft {
+		margin-bottom: -10px;
+	}
+	.smallerHeadRight {
+		margin-top: -10px;
+	}
+
+	.animateCarPath {
+		width: 28%;
+		left: -9%;
+		bottom: 150px
+	}
+
+	.animateBusStop {
+		width: 30%;
+		bottom: 150px
+	}
+
+	/*USER INPUT CHANGES*/
+	.userInput .wrapper {
+		padding: 25px;
+	}
+
+	.userInput p {
+		font-size: 1.2rem;
+	}
+
+	input[type=submit] {
+		font-size: 1.4rem;
+	}
+	label {
+		margin: 5px 2px;
+	}
+
+	/*CUSTOMIZED PLAYLIST STYLE CHANGES*/
+
+	.customizedPlaylist h3 {
+		margin-top: -20px;
+		font-size: 2.8rem;
+	}
+
+	button {
+		left: 22%;
+	}
+}

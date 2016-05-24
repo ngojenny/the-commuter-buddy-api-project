@@ -1,0 +1,56 @@
+/*GENERAL LAYOUT STYLES*/
+.wrapper {
+	width: 65%;
+	max-width: 960px;
+	margin: 0 auto
+}
+
+img {
+	max-width: 100%;
+}
+
+/* GENERAL TYPOGRAPHY STYLES*/
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 16px;
+}
+
+
+h1 {
+	font-family: $test;
+	font-size: 12rem;
+	letter-spacing: 3px;
+	text-align: center;
+}
+
+h2, p, label {
+	font-family: $sans;
+	font-weight: lighter;
+}
+
+h3 {
+	margin-top: 0;
+	font-family: $test;
+	font-size: 4.3rem;
+	color: #ffffff;
+	letter-spacing: 2px;
+	text-align: center;
+	-webkit-text-stroke: 1px #000000;
+}
+
+a {
+	text-decoration: none;
+	font-family: $sans;
+	text-transform: uppercase;
+}
+
+.btn {
+	letter-spacing: 2px;
+	border: 3px solid #000000;
+	border-radius: 5px;
+	padding: 10px;
+}
+

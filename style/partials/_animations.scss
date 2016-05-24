@@ -1,0 +1,51 @@
+@-webkit-keyframes path {
+	0% {
+		bottom: 30%;
+		opacity: 0;
+		left: 0;
+	}
+	20% {
+		left: 1%;
+	}
+
+	50% {
+		opacity: 1;
+		left: 2%;
+	}
+
+	80% {
+		left: 1%;
+	}
+
+	100% {
+		bottom: 45%;
+		opacity: 0;
+		left: 0;
+	}
+}
+
+@-webkit-keyframes pathTwo {
+	0% {
+		bottom: 45%;
+		opacity: 0;
+		right: 0;
+	}
+	20% {
+		right: 1%;
+	}
+
+	50% {
+		opacity: 1;
+		right: 2%;
+	}
+
+	80% {
+		right: 1%;
+	}
+
+	100% {
+		bottom: 65%;
+		opacity: 0;
+		right: 0;
+	}
+}

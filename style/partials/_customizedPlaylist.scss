@@ -1,0 +1,38 @@
+.customizedPlaylist {
+	position: relative;
+	padding: 53px 0 0;
+	background-color: $second;
+	text-align: center;
+	img {
+		width: 100%;
+	}
+	iframe {
+		width: 85%;
+		position: absolute;
+		top: 13%;
+		left: 8%;
+	}
+
+	h3 {
+		float: left;
+		width: calc(60% - 50px);
+		margin: 200px 0 150px 50px;
+		font-size: 5rem;
+		text-transform: uppercase;
+	}
+}
+
+button {
+	font-family: $sans;
+	letter-spacing: 2px;
+	background: #ffffff;
+	text-transform: uppercase;
+	margin-top: -30px;
+	margin-left: 30px;
+}
+.spotifyWidget {
+	float: left;
+	position: relative;
+	left: 30px;
+	width: 40%;
+}
