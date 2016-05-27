@@ -109,14 +109,6 @@ commuteTime.calculateTimeMilli = function(time) {
 var searchItem = {};
 
 searchItem.init = function() {
-	searchItem.getArtistsInfo();
-}
-
-
-//create a function that pulls artists that is associated 
-
-//this function will pull artists from spotify that are associated with the same genre/users input
-searchItem.getArtistsInfo = function() { 
 	$('form.createPlaylist').on('submit', function(e) {
 		e.preventDefault();
 		// console.log('does this work?');
@@ -128,33 +120,74 @@ searchItem.getArtistsInfo = function() {
 				genreChoice.push(this.value);
 			}
 		});
-			console.log(genreChoice);
-			// searchItem.getData(genreChoice);
-			var getArtists = genreChoice.map(function(genre){
-				return $.ajax({
-					url: 'https://api.spotify.com/v1/search',
-					dataType: 'json',
-					method: 'GET',
-					data: {
-						q: 'genre:' + genre,
-						type: 'artist'
-					}
-				});
-				console.log(getArtists);
-			}); 
+		console.log(genreChoice);
+		// searchItem.getData(genreChoice);
+		if(genreChoice.length === 1) {
+			searchItem.getSingleArtist(genreChoice[0]);
+			console.log(genreChoice[0]);
+		}
+		else {
+			searchItem.getArtistsInfo(genreChoice);
+		}
+	});
+}
 
-			$.when.apply(null, getArtists)
-				.then(function() {
-					var artists = Array.prototype.slice.call(arguments);
-					searchItem.getArtistsID(artists);
 
-			});
+//this function will pull artists from spotify that are associated with the single genre user chose (THIS FUNCTION WILL RUN OR getArtistsInfo() will run depending on user's input)
+searchItem.getSingleArtist = function(genre) {
+	var artists = $.ajax({
+		url: 'https://api.spotify.com/v1/search',
+		dataType: 'json',
+		method: 'GET',
+		data: {
+			q: 'genre:' + genre,
+			type: 'artist'
+		}
+	}).then(function(res) {
+		console.log(res.artists.items);
+		var singleGenreRes = res.artists.items;
+		searchItem.getArtistsIDOneGenre(singleGenreRes);
+	});
+}
+searchItem.getArtistsIDOneGenre = function(artist) {
+	var idArray = artist.map(function(item){
+		return item.id
+	});
+	console.log(idArray)
+	searchItem.getArtistsTrack(idArray);
+};
 
-			//now I have an array with three arrays in them and in each array I have 3 objects, in each object there is a property called artists which is an object that has the property of items which consists of an array of 20 other objects, 
+/******************
+---------OR-------
+******************/
 
-			//create an array with just the name of the artists in the 20 objects
+//this function will pull artists from spotify that are associated with the multiple genres user chose (THIS FUNCTION WILL RUN OR getSingleArtist() will run depending on user's input)
+searchItem.getArtistsInfo = function(genreChoice) { 
+	var getArtists = genreChoice.map(function(genre){
+		return $.ajax({
+			url: 'https://api.spotify.com/v1/search',
+			dataType: 'json',
+			method: 'GET',
+			data: {
+				q: 'genre:' + genre,
+				type: 'artist'
+			}
+		});
+		console.log(getArtists);
+	}); 
+
+	$.when.apply(null, getArtists)
+		.then(function() {
+			var artists = Array.prototype.slice.call(arguments);
+			searchItem.getArtistsID(artists);
+			console.log(artists);
 
 	});
+
+	//now I have an array with three arrays in them and in each array I have 3 objects, in each object there is a property called artists which is an object that has the property of items which consists of an array of 20 other objects, 
+
+	//create an array with just the name of the artists in the 20 objects
+
 }
 
 //I will...go into genre choice, go to the first object item which will have a property of artists which will each be store in an object, and in that object extract the ID:value, push the ids into an empty array, do that for each array in the main array (genreChoice)
@@ -163,7 +196,7 @@ searchItem.getArtistsID = function(artist) {
 	var idArray = artist.map(function(item){
 		return item[0];
 	});
-	console.log
+	console.log(artist);
 	idArray = idArray.map(function(item){
 		return item.artists.items
 	});
@@ -289,7 +322,7 @@ searchItem.displayWidget = function(arrayOfTrackID) {
 	//goodbye message to user
 	var printEndGreet = $('<h3>').text('Thanks for using The Commuter Buddy');
 
-	var refreshButton = $('<button>').addClass('btn').text('Try again');
+	var refreshButton = $('<button>').addClass('btn').text('One more time!');
 
 	$('.customizedPlaylist .wrapper').append(printEndGreet, refreshButton);
 	$('.customizedPlaylist button').on('click', function(){
@@ -297,15 +330,6 @@ searchItem.displayWidget = function(arrayOfTrackID) {
 	});
 }
 
-
-// searchItem.displayPrintPlaylist = function(songObject) {
-// 	// console.log(printArtist);
-// 	var printArtist = songObject.map(function(singleObject){
-// 		console.log(printArtist + 'hi')
-// 		return singleObject.artist[].name;
-// 	}); 
-// 	console.log(printArtist);
-// }
 
 //flatten the arrays in the array so that it makes one big array
 function flatten(arrayToFlatten) {
@@ -318,12 +342,14 @@ function flatten(arrayToFlatten) {
 
 //this function will help us display the playlist on the DOM
 
-$('a.btn').smoothScroll({
-	speed: 400
-});
 
 $(document).ready(function(){
 	greetUser()
 	commuteTime.init();
 	searchItem.init();
+
+	//smoothscroll
+	$('a.btn').smoothScroll({
+		speed: 400
+	});
 });
