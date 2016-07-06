@@ -3,8 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="Jenny Ngo, Front End Developer, Commuter Buddy, The Commuter Buddy">
+	<meta name="description" content="The Commuter Buddy will calculate your commute time and generate a customized playlist you can listen to from start to finish">
+	<meta name="author" content="Jenny Ngo">
+	<!-- OG -->
+	<meta property="og:title" content="The Commuter Buddy">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://jennyngo.io/the-commuter-buddy">
+	<meta property="og:site_name" content="The Commuter Buddy">
+	<meta property="og:description" content="The Commuter Buddy will calculate your commute time and generate a customized playlist you can listen to from start to finish">
 	<title>The Commuter Buddy</title>
 	<link href='https://fonts.googleapis.com/css?family=Carrois+Gothic+SC|Londrina+Solid' rel='stylesheet' type='text/css'>
+	<link type="image/png" href="images/favicon.png" rel="icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
 	<link rel="stylesheet" href="style/main.css">
 </head>
 <body>
@@ -36,7 +47,7 @@
 				<img src="images/note2.svg" alt="Musical Notes animating bottom to top relative to the Half Car">
 			</div>
 
-			<a href="#userInput" class="btn">Let's get started <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+			<a href="#userInput" class="btn animated infinite pulse">Let's get started <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
 			<p class="userMessage">*The Commuter Buddy works best when spotify is open</p>
 			
 		</div>
@@ -49,7 +60,7 @@
 			<form action="" class="calculateCommuterTime">
 				<p class="instructions">Please enter your start and end address (e.g. 483 Queen St West Toronto ON).</p>
 				<label class="simple" for="origin_addresses">Start</label>
-				<input type="text" name="origin_addresses" placeholder="Please enter your starting location">
+				<input type="text" name="origin_addresses" placeholder="Please enter your start location">
 				<label class="simple" for="destination_addresses">End</label>
 				<input type="text" name="destination_addresses" placeholder="Please enter your end location">
 
@@ -152,7 +163,7 @@
 			<a class="simple" href="https://developers.google.com/maps/documentation/distance-matrix/">Google Maps DM API</a>
 			</span>
 		</p>
-		<p class="userMessage">graphics made by these awesome <a class="simple" href="">humans</a></p>
+		<p class="userMessage">graphics made by these awesome <a class="simple" href="credits.html">humans</a></p>
 	</footer>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

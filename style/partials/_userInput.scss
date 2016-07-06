@@ -1,6 +1,7 @@
 .userInput {
 	background-color: $second;
 	padding: 50px;
+	min-height: 100vh;
 	.wrapper {
 		// background-color: #ffffff;
 		padding: 50px;
@@ -8,7 +9,6 @@
 	}
 	p {
 		font-size: 1.9rem;
-		text-transform: uppercase;
 		letter-spacing: 1.5px;
 		line-height: 1.5;
 	}
@@ -16,6 +16,7 @@
 
 .greeting h3 {
 	font-size: 4rem;
+	width: 94%;
 }
 
 p.instructions {
@@ -60,7 +61,9 @@ input[type=text] {
 	border-radius: 3px;
 	border: none;
 	font-family: $sans;
-
+	&:focus {
+		border: 2px solid $black;
+	}
 }
 
 input[type=radio],
@@ -70,8 +73,8 @@ input[type=checkbox] {
 
 input[type=radio]:checked + label,
 input[type=checkbox]:checked + label {
-	color: #000000;
-	border: 2px solid #000000;
+	color: $black;
+	border: 2px solid $black;
 }
 
 input[type=submit] {
@@ -80,7 +83,7 @@ input[type=submit] {
 	margin: 20px auto;
 	font-family: $sans;
 	background-color: #ffffff;
-	border: 2px solid #000000;
+	border: 2px solid $black;
 }
 
 fieldset {

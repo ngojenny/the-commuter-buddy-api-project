@@ -1,29 +1,29 @@
 header {
 	position: relative;
-	padding: 50px 0;
+	// padding: 50px 0;
 	background-color: $main;
 	color: #ffffff;
 	text-align: center;
 	overflow-x: hidden;
-
+	height: 100vh;
 	h1 {
 		max-width: 600px;
 		margin: 100px auto 40px;
 		text-transform: uppercase;
-		-webkit-text-stroke: 3px #000000;
+		-webkit-text-stroke: 3px $black;
 	}
 
 	h2 {
 		font-size: 2.1rem;
 		line-height: 1.5;
 		letter-spacing: 2px;
-		color: #000000;
+		color: $black;
 	}
 
 	a {
 		display: inline-block;
 		margin-top: 100px;
-		color: #000000;
+		color: $black;
 		background-color: #ffffff;
 		transition: 
 			// background 0.3s,
@@ -98,7 +98,7 @@ header {
 .smallerHead {
 	font-size: 4rem;
 	display: block;
-	-webkit-text-stroke: 2px #000000;
+	-webkit-text-stroke: 2px $black;
 }
 
 .smallerHeadLeft {
@@ -109,4 +109,13 @@ header {
 .smallerHeadRight {
 	text-align: right;
 	margin-top: -20px;
+}
+
+.credits {
+	list-style: none;
+	color: $black;
+	a {
+		padding: 5px;
+		margin: 10px;
+	}
 }

@@ -89,6 +89,8 @@ commuteTime.displayTime = function(time) {
 	var commuterTimeMin = Math.round(time / 60);
 	var printTime = $('<p>').addClass('commuterTimeMin').text('Your commute will take ' + commuterTimeMin + 'mins');
 	var commuteTimeResultsDiv = $('<div>').addClass('commuteTimeResults').append(printTime)
+
+	$('.commuteTimeResults').remove();
 	$('.userInput .calculateCommuterTime').append(commuteTimeResultsDiv);
 
 	//smooth scroll plugin
@@ -312,6 +314,8 @@ searchItem.pullTrackIDs = function(customizedPlaylistArray) {
 searchItem.displayWidget = function(arrayOfTrackID) {
 	var widgetCode = '<iframe src="https://embed.spotify.com/?uri=spotify:trackset:Commuter Playlist:' + arrayOfTrackID + 'width="300" height="400" frameborder="0" allowtransparency="true"></iframe>'
 	var iphoneOutline = $('<img>').attr('src', 'images/iphone2.svg');
+
+	$('.spotifyWidget').empty();
 	$('.spotifyWidget').append(iphoneOutline, widgetCode);
 	//smoothScroll plugin
 	$.smoothScroll( {
@@ -320,10 +324,12 @@ searchItem.displayWidget = function(arrayOfTrackID) {
 	});
 
 	//goodbye message to user
-	var printEndGreet = $('<h3>').text('Thanks for using The Commuter Buddy');
+	var printEndGreet = $('<h3>').addClass('goodbye').text('Thanks for using The Commuter Buddy');
 
 	var refreshButton = $('<button>').addClass('btn').text('One more time!');
 
+	$('.customizedPlaylist .btn').remove();
+	$('.customizedPlaylist .goodbye').remove();
 	$('.customizedPlaylist .wrapper').append(printEndGreet, refreshButton);
 	$('.customizedPlaylist button').on('click', function(){
 			location.reload();
@@ -338,15 +344,11 @@ function flatten(arrayToFlatten) {
 	}, []);
 }
 
-//Make an array of artist names;
-
-//this function will help us display the playlist on the DOM
-
-
 $(document).ready(function(){
 	greetUser()
 	commuteTime.init();
 	searchItem.init();
+
 
 	//smoothscroll
 	$('a.btn').smoothScroll({
